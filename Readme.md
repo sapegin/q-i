@@ -2,6 +2,8 @@
 
 Useful for debugging big objects, like webpack configuration.
 
+![](https://d3vv6lp55qjaqc.cloudfront.net/items/0S1R2F1u1i1E2h2z0R41/q-i.png)
+
 ## Installation
 
 ```bash
