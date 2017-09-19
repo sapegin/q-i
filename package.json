@@ -1,0 +1,50 @@
+{
+  "name": "q-i",
+  "version": "1.0.0",
+  "description": "quickly inspect Node.js objects",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me"
+  },
+  "homepage": "https://github.com/sapegin/Artem Sapegin",
+  "repository": "sapegin/Artem Sapegin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint",
+    "test:jest": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test": "npm run test:jest"
+  },
+  "keywords": [
+    "node",
+    "inspect",
+    "inspector",
+    "object",
+    "print",
+    "printer",
+    "pretty",
+    "stringify",
+    "json"
+  ],
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "eslint-config-tamia": "^4.2.3",
+    "eslint-plugin-prettier": "^2.3.1",
+    "jest": "^21.1.0",
+    "prettier": "^1.7.0"
+  },
+  "dependencies": {
+    "ansi-styles": "^3.2.0",
+    "lodash": "^4.17.4",
+    "stringify-object": "^3.2.0"
+  }
+}

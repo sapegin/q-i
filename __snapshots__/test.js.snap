@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stringify() should collapse arrays with more than 30 items 1`] = `
+"{
+  a: [
+    [36m1[39m,
+    [36m2[39m
+  ],
+  b: b,[2mArray[31][22m
+}"
+`;
+
+exports[`stringify() should collapse objects with more than 30 keys 1`] = `
+"{
+  a: {
+    k1: [36m0[39m,
+    k2: [36m0[39m
+  },
+  b: [2mObject {31}[22m
+}"
+`;
+
+exports[`stringify() should color highlight basic types 1`] = `
+"{
+  a: [3mundefined[23m,
+  b: [3mnull[23m,
+  c: [36m0[39m,
+  d: [36m42[39m,
+  e: [32m'42'[39m,
+  f: [35mfalse[39m,
+  g: [35mtrue[39m,
+  h: [33m/pizza/[39m,
+  i: [
+    [36m1[39m,
+    [36m2[39m
+  ],
+  j: {
+    x: [36m1[39m,
+    y: [36m2[39m
+  }
+}"
+`;
+
+exports[`stringify() should print contructor names for classes 1`] = `
+"{
+  x: Pizza {
+    name: [32m'Quattro Formaggi'[39m
+  }
+}"
+`;
