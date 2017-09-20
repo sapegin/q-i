@@ -12,6 +12,7 @@ Useful for debugging big objects, like webpack configuration.
 * Compact and readable output
 * No unnecessary quotes
 * Color highlighted
+* Prints the whole object or only the part you need
 * Collapses huge arrays and objects (more than 30 items by default)
 
 ## Installation
