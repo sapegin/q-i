@@ -22,7 +22,8 @@
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test": "npm run test:jest"
+    "test": "npm run test:jest",
+    "precommit": "lint-staged"
   },
   "keywords": [
     "node",
@@ -42,12 +43,20 @@
     "eslint": "^4.7.1",
     "eslint-config-tamia": "^4.2.3",
     "eslint-plugin-prettier": "^2.3.1",
+    "husky": "^0.14.3",
     "jest": "^21.1.0",
+    "lint-staged": "^4.2.1",
     "prettier": "^1.7.0"
   },
   "dependencies": {
     "ansi-styles": "^3.2.0",
     "lodash": "^4.17.4",
     "stringify-object": "^3.2.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
