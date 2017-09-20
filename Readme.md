@@ -1,5 +1,6 @@
 # q-i: Node.js objects inspector with color highlighting
 
+[![npm](https://img.shields.io/npm/v/q-i.svg)](https://www.npmjs.com/package/q-i)
 [![Build Status](https://travis-ci.org/sapegin/q-i.svg)](https://travis-ci.org/sapegin/q-i)
 
 Useful for debugging big objects, like webpack configuration.

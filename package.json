@@ -1,6 +1,6 @@
 {
   "name": "q-i",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Node.js objects inspector with color highlighting",
   "author": {
     "name": "Artem Sapegin",
@@ -58,5 +58,10 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
   }
 }
