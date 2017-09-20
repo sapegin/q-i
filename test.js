@@ -120,6 +120,41 @@ describe('stringify()', () => {
 		);
 		expect(result).toMatchSnapshot();
 	});
+
+	it('should accept custom max items', () => {
+		const result = qi.stringify(
+			{
+				a: { k1: 0, k2: 0 },
+				b: {
+					k1: 0,
+					k2: 0,
+					k3: 0,
+					k4: 0,
+				},
+			},
+			{ maxItems: 3 }
+		);
+		expect(result).toMatchSnapshot();
+	});
+
+	it('should accept address and custom max items', () => {
+		const result = qi.stringify(
+			{
+				a: { k1: 0, k2: 0 },
+				b: {
+					c: {
+						k1: 0,
+						k2: 0,
+						k3: 0,
+						k4: 0,
+					},
+				},
+			},
+			'b',
+			{ maxItems: 3 }
+		);
+		expect(result).toMatchSnapshot();
+	});
 });
 
 describe('print()', () => {
@@ -146,5 +181,40 @@ describe('print()', () => {
 			'a.y'
 		);
 		expect(console.log).toBeCalledWith(expect.stringMatching('42'));
+	});
+
+	it('should accept custom max items', () => {
+		qi.print(
+			{
+				a: { k1: 0, k2: 0 },
+				b: {
+					k1: 0,
+					k2: 0,
+					k3: 0,
+					k4: 0,
+				},
+			},
+			{ maxItems: 3 }
+		);
+		expect(console.log).toBeCalledWith(expect.stringMatching('Object \\{4\\}'));
+	});
+
+	it('should accept address and custom max items', () => {
+		qi.print(
+			{
+				a: { k1: 0, k2: 0 },
+				b: {
+					c: {
+						k1: 0,
+						k2: 0,
+						k3: 0,
+						k4: 0,
+					},
+				},
+			},
+			'b',
+			{ maxItems: 3 }
+		);
+		expect(console.log).toBeCalledWith(expect.stringMatching('Object \\{4\\}'));
 	});
 });

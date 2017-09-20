@@ -4,6 +4,13 @@ Useful for debugging big objects, like webpack configuration.
 
 ![](https://d3vv6lp55qjaqc.cloudfront.net/items/0S1R2F1u1i1E2h2z0R41/q-i.png)
 
+## Features
+
+* Compact and readable output
+* No unnecessary quotes
+* Color highlighted
+* Collapses huge arrays and objects (more than 30 items by default)
+
 ## Installation
 
 ```bash
@@ -40,6 +47,19 @@ console.log(stringify(obj, 'a.y'));
 }
 */
 ```
+
+## Options
+
+```js
+print(obj, { maxItems: Infinity })
+print(obj, 'a.y', { maxItems: Infinity })
+stringify(obj, { maxItems: Infinity })
+stringify(obj, 'a.y', { maxItems: Infinity })
+```
+
+### `maxItems` (default: 30)
+
+Collapse arrays with more than `maxItems` items and objects with more than `maxItems` keys.
 
 ## Change log
 

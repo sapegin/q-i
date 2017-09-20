@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`stringify() should accept address and custom max items 1`] = `
+"{
+  c: [2mObject {4}[22m
+}"
+`;
+
+exports[`stringify() should accept custom max items 1`] = `
+"{
+  a: {
+    k1: [36m0[39m,
+    k2: [36m0[39m
+  },
+  b: [2mObject {4}[22m
+}"
+`;
+
 exports[`stringify() should collapse arrays with more than 30 items 1`] = `
 "{
   a: [

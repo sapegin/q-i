@@ -2,7 +2,6 @@ const _ = require('lodash');
 const stringifyObject = require('stringify-object');
 const ansi = require('ansi-styles');
 
-const maxItems = 30;
 const internals = ['Array', 'Object', 'Function'];
 
 const style = (v, s) => `${ansi[s].open}${v}${ansi[s].close}`;
@@ -34,10 +33,17 @@ const printers = {
 	RegExp: v => color(v, 'yellow'),
 };
 
-function stringify(object, addr) {
+function stringify(object, addr, options) {
 	if (addr) {
-		object = _.get(object, addr);
+		if (!options && _.isPlainObject(addr)) {
+			options = addr;
+			addr = undefined;
+		} else {
+			object = _.get(object, addr);
+		}
 	}
+
+	const { maxItems = 30 } = options || {};
 
 	return stringifyObject(object, {
 		indent: '  ',
@@ -69,9 +75,9 @@ function stringify(object, addr) {
 	});
 }
 
-function print(object, addr) {
+function print(object, addr, options) {
 	// eslint-disable-next-line no-console
-	console.log(stringify(object, addr));
+	console.log(stringify(object, addr, options));
 }
 
 module.exports = {
