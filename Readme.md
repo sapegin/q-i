@@ -1,4 +1,4 @@
-# q-i: quickly inspect Node.js objects
+# q-i: Node.js objects inspector with color highlighting
 
 Useful for debugging big objects, like webpack configuration.
 
