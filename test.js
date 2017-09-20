@@ -110,6 +110,16 @@ describe('stringify()', () => {
 		});
 		expect(result).toMatchSnapshot();
 	});
+
+	it('should stringify part of the object if an address is specified', () => {
+		const result = qi.stringify(
+			{
+				a: { x: 1, y: { z: 2 } },
+			},
+			'a.y'
+		);
+		expect(result).toMatchSnapshot();
+	});
 });
 
 describe('print()', () => {
@@ -125,6 +135,16 @@ describe('print()', () => {
 		qi.print({
 			a: 42,
 		});
+		expect(console.log).toBeCalledWith(expect.stringMatching('42'));
+	});
+
+	it('should print part of the object if an address is specified', () => {
+		qi.print(
+			{
+				a: { x: 41, y: { z: 42 } },
+			},
+			'a.y'
+		);
 		expect(console.log).toBeCalledWith(expect.stringMatching('42'));
 	});
 });

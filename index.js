@@ -34,7 +34,11 @@ const printers = {
 	RegExp: v => color(v, 'yellow'),
 };
 
-function stringify(object) {
+function stringify(object, addr) {
+	if (addr) {
+		object = _.get(object, addr);
+	}
+
 	return stringifyObject(object, {
 		indent: '  ',
 		transform: (obj, key, originalResult) => {
@@ -65,9 +69,9 @@ function stringify(object) {
 	});
 }
 
-function print(object) {
+function print(object, addr) {
 	// eslint-disable-next-line no-console
-	console.log(stringify(object));
+	console.log(stringify(object, addr));
 }
 
 module.exports = {

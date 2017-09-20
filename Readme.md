@@ -15,8 +15,30 @@ npm install q-i
 ```js
 const { print, stringify } = require('q-i');
 
-print({ a: 42 });
-console.log(stringify({ a: 42 }));
+const obj = { a: { x: 41, y: { z: 42 } } };
+
+// Print whole object
+print(obj);
+console.log(stringify(obj));
+/* =>
+{
+  a: {
+    x: 41,
+    y: {
+      z: 42
+    }
+  }
+}
+*/
+
+// Print part of an object
+print(obj, 'a.y');
+console.log(stringify(obj, 'a.y'));
+/* =>
+{
+  z: 42
+}
+*/
 ```
 
 ## Change log
