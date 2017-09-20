@@ -10,7 +10,7 @@
   "repository": "sapegin/Artem Sapegin",
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "main": "index.js",
   "files": [
