@@ -6,8 +6,8 @@
     "name": "Artem Sapegin",
     "url": "http://sapegin.me"
   },
-  "homepage": "https://github.com/sapegin/Artem Sapegin",
-  "repository": "sapegin/Artem Sapegin",
+  "homepage": "https://github.com/sapegin/q-i",
+  "repository": "sapegin/q-i",
   "license": "MIT",
   "engines": {
     "node": ">=6"
