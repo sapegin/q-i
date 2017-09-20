@@ -33,7 +33,10 @@
     "printer",
     "pretty",
     "stringify",
-    "json"
+    "json",
+    "color",
+    "syntax",
+    "highlight"
   ],
   "devDependencies": {
     "eslint": "^4.7.1",
