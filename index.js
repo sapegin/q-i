@@ -25,6 +25,10 @@ const getConstructor = v => {
 		return 'Undefined';
 	}
 
+	if (v.constructor === undefined) {
+		return 'No constructor';
+	}
+
 	return v.constructor.name;
 };
 
