@@ -22,8 +22,8 @@ describe('stringify()', () => {
 
 	it('should print contructor names for classes', () => {
 		class Pizza {
-			constructor({ name }) {
-				this.name = name;
+			constructor(options) {
+				this.name = options.name;
 			}
 		}
 		const result = qi.stringify({
