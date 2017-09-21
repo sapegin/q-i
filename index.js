@@ -45,7 +45,8 @@ function stringify(object, addr, options) {
 		}
 	}
 
-	const { maxItems = 30, maxLines = 1 } = options || {};
+	const maxItems = (options && options.maxItems) || 30;
+	const maxLines = (options && options.maxLines) || 1;
 
 	return stringifyObject(object, {
 		indent: '  ',

@@ -10,7 +10,7 @@
   "repository": "sapegin/q-i",
   "license": "MIT",
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "main": "index.js",
   "files": [
