@@ -1,6 +1,7 @@
-const qi = require('./index');
-
+'use strict';
 /* eslint-disable id-blacklist, no-console */
+
+const qi = require('./index');
 
 describe('stringify()', () => {
 	it('should color highlight basic types', () => {

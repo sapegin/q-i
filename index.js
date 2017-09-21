@@ -1,3 +1,5 @@
+'use strict';
+
 const _ = require('lodash');
 const stringifyObject = require('stringify-object');
 const ansi = require('ansi-styles');
