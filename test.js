@@ -38,9 +38,6 @@ describe('stringify()', () => {
 		}
 		const result = qi.stringify({
 			a: fn,
-			b: x => {
-				return x * 2;
-			},
 			c: x => x * 2,
 		});
 		expect(result).toMatchSnapshot();
