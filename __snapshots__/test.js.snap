@@ -72,6 +72,12 @@ exports[`stringify() should print contructor names for classes 1`] = `
 }"
 `;
 
+exports[`stringify() should stringify objects without constructor 1`] = `
+"{
+  a: {}
+}"
+`;
+
 exports[`stringify() should stringify part of the object if an address is specified 1`] = `
 "{
   z: [36m2[39m

@@ -133,6 +133,13 @@ describe('stringify()', () => {
 		expect(result).toMatchSnapshot();
 	});
 
+	it('should stringify objects without constructor', () => {
+		const result = qi.stringify({
+			a: Object.create(null),
+		});
+		expect(result).toMatchSnapshot();
+	});
+
 	it('should accept custom max items', () => {
 		const result = qi.stringify(
 			{
