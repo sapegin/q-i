@@ -12,6 +12,8 @@ const getArraySize = o => Array.isArray(o) && o.length;
 
 const getObjectSize = o => _.isPlainObject(o) && Object.keys(o).length;
 
+const getFunctionSize = o => typeof o === 'function' && o.toString().split('\n').length;
+
 const getConstructor = v => {
 	if (v === null) {
 		return 'Null';
@@ -43,7 +45,7 @@ function stringify(object, addr, options) {
 		}
 	}
 
-	const { maxItems = 30 } = options || {};
+	const { maxItems = 30, maxLines = 1 } = options || {};
 
 	return stringifyObject(object, {
 		indent: '  ',
@@ -58,6 +60,11 @@ function stringify(object, addr, options) {
 			const objectSize = getObjectSize(value);
 			if (objectSize > maxItems) {
 				return style(`Object {${objectSize}}`, 'dim');
+			}
+
+			const functionSize = getFunctionSize(value);
+			if (functionSize > maxLines) {
+				return style(`Function ${value.name || ''}`, 'dim');
 			}
 
 			const ctr = getConstructor(value);

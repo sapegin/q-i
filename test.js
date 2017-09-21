@@ -31,6 +31,20 @@ describe('stringify()', () => {
 		expect(result).toMatchSnapshot();
 	});
 
+	it('should collapse functions longer than one line', () => {
+		function fn(x) {
+			return x * 2;
+		}
+		const result = qi.stringify({
+			a: fn,
+			b: x => {
+				return x * 2;
+			},
+			c: x => x * 2,
+		});
+		expect(result).toMatchSnapshot();
+	});
+
 	it('should collapse arrays with more than 30 items', () => {
 		const result = qi.stringify({
 			a: [1, 2],

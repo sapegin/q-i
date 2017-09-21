@@ -26,6 +26,14 @@ exports[`stringify() should collapse arrays with more than 30 items 1`] = `
 }"
 `;
 
+exports[`stringify() should collapse functions longer than one line 1`] = `
+"{
+  a: [2mFunction fn[22m,
+  b: [2mFunction b[22m,
+  c: x => x * 2
+}"
+`;
+
 exports[`stringify() should collapse objects with more than 30 keys 1`] = `
 "{
   a: {
