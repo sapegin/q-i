@@ -76,7 +76,7 @@ function stringify(object, addr, options) {
 				return printers[ctr](originalResult);
 			}
 
-			if (ctr && !internals.includes(ctr)) {
+			if (ctr && internals.indexOf(ctr) === -1) {
 				return `${ctr} ${originalResult}`;
 			}
 
