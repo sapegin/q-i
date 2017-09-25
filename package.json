@@ -50,7 +50,8 @@
   },
   "dependencies": {
     "ansi-styles": "^3.2.0",
-    "lodash": "^4.17.4",
+    "dlv": "^1.1.0",
+    "is-plain-object": "^2.0.4",
     "stringify-object": "^3.2.0"
   },
   "lint-staged": {
