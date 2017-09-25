@@ -1,6 +1,7 @@
 'use strict';
 
-const _ = require('lodash');
+const get = require('dlv');
+const isPlainObject = require('is-plain-object');
 const stringifyObject = require('stringify-object');
 const ansi = require('ansi-styles');
 
@@ -12,7 +13,7 @@ const color = (v, c) => `${ansi.color[c].open}${v}${ansi.color.close}`;
 
 const getArraySize = o => Array.isArray(o) && o.length;
 
-const getObjectSize = o => _.isPlainObject(o) && Object.keys(o).length;
+const getObjectSize = o => isPlainObject(o) && Object.keys(o).length;
 
 const getFunctionSize = o => typeof o === 'function' && o.toString().split('\n').length;
 
@@ -39,11 +40,11 @@ const printers = {
 
 function stringify(object, addr, options) {
 	if (addr) {
-		if (!options && _.isPlainObject(addr)) {
+		if (!options && isPlainObject(addr)) {
 			options = addr;
 			addr = undefined;
 		} else {
-			object = _.get(object, addr);
+			object = get(object, addr);
 		}
 	}
 
