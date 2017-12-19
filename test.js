@@ -123,16 +123,6 @@ describe('stringify()', () => {
 		expect(result).toMatchSnapshot();
 	});
 
-	it('should stringify part of the object if an address is specified', () => {
-		const result = qi.stringify(
-			{
-				a: { x: 1, y: { z: 2 } },
-			},
-			'a.y'
-		);
-		expect(result).toMatchSnapshot();
-	});
-
 	it('should stringify objects without constructor', () => {
 		const result = qi.stringify({
 			a: Object.create(null),
@@ -155,25 +145,6 @@ describe('stringify()', () => {
 		);
 		expect(result).toMatchSnapshot();
 	});
-
-	it('should accept address and custom max items', () => {
-		const result = qi.stringify(
-			{
-				a: { k1: 0, k2: 0 },
-				b: {
-					c: {
-						k1: 0,
-						k2: 0,
-						k3: 0,
-						k4: 0,
-					},
-				},
-			},
-			'b',
-			{ maxItems: 3 }
-		);
-		expect(result).toMatchSnapshot();
-	});
 });
 
 describe('print()', () => {
@@ -192,16 +163,6 @@ describe('print()', () => {
 		expect(console.log).toBeCalledWith(expect.stringMatching('42'));
 	});
 
-	it('should print part of the object if an address is specified', () => {
-		qi.print(
-			{
-				a: { x: 41, y: { z: 42 } },
-			},
-			'a.y'
-		);
-		expect(console.log).toBeCalledWith(expect.stringMatching('42'));
-	});
-
 	it('should accept custom max items', () => {
 		qi.print(
 			{
@@ -213,25 +174,6 @@ describe('print()', () => {
 					k4: 0,
 				},
 			},
-			{ maxItems: 3 }
-		);
-		expect(console.log).toBeCalledWith(expect.stringMatching('Object \\{4\\}'));
-	});
-
-	it('should accept address and custom max items', () => {
-		qi.print(
-			{
-				a: { k1: 0, k2: 0 },
-				b: {
-					c: {
-						k1: 0,
-						k2: 0,
-						k3: 0,
-						k4: 0,
-					},
-				},
-			},
-			'b',
 			{ maxItems: 3 }
 		);
 		expect(console.log).toBeCalledWith(expect.stringMatching('Object \\{4\\}'));

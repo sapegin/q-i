@@ -12,7 +12,6 @@ Useful for debugging big objects, like webpack configuration.
 * Compact and readable output
 * No unnecessary quotes
 * Color highlighted
-* Prints the whole object or only the part you need
 * Collapses huge arrays and objects (more than 30 items by default)
 
 ## Installation
@@ -28,7 +27,6 @@ const { print, stringify } = require('q-i');
 
 const obj = { a: { x: 41, y: { z: 42 } } };
 
-// Print whole object
 print(obj);
 console.log(stringify(obj));
 /* =>
@@ -41,24 +39,13 @@ console.log(stringify(obj));
   }
 }
 */
-
-// Print part of an object
-print(obj, 'a.y');
-console.log(stringify(obj, 'a.y'));
-/* =>
-{
-  z: 42
-}
-*/
 ```
 
 ## Options
 
 ```js
 print(obj, { maxItems: Infinity })
-print(obj, 'a.y', { maxItems: Infinity })
 stringify(obj, { maxItems: Infinity })
-stringify(obj, 'a.y', { maxItems: Infinity })
 ```
 
 ### `maxItems` (default: 30)

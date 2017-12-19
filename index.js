@@ -1,6 +1,5 @@
 'use strict';
 
-const get = require('dlv');
 const isPlainObject = require('is-plain-object');
 const stringifyObject = require('stringify-object');
 const ansi = require('ansi-styles');
@@ -38,16 +37,7 @@ const printers = {
 	RegExp: v => color(v, 'yellow'),
 };
 
-function stringify(object, addr, options) {
-	if (addr) {
-		if (!options && isPlainObject(addr)) {
-			options = addr;
-			addr = undefined;
-		} else {
-			object = get(object, addr);
-		}
-	}
-
+function stringify(object, options) {
 	const maxItems = (options && options.maxItems) || 30;
 	const maxLines = (options && options.maxLines) || 1;
 
@@ -86,9 +76,9 @@ function stringify(object, addr, options) {
 	});
 }
 
-function print(object, addr, options) {
+function print(object, options) {
 	// eslint-disable-next-line no-console
-	console.log(stringify(object, addr, options));
+	console.log(stringify(object, options));
 }
 
 module.exports = {
