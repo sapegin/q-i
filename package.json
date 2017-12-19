@@ -1,6 +1,6 @@
 {
   "name": "q-i",
-  "version": "0.0.0-development",
+  "version": "2.0.0",
   "description": "Node.js objects inspector with color highlighting",
   "author": {
     "name": "Artem Sapegin",
